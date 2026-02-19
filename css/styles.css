@@ -720,9 +720,21 @@ footer ul.social-wrapper  li.team-social-list-item .social-link:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* opacity: 0;
-	pointer-events: none; */
+	transition: opacity 250ms ease, visibility 250ms ease;
+	/* DO NOT DELETE BELOW - CLASS FOR WORK OF THE FORM */
+	/*  */opacity: 0;
+  	/*  */visibility: hidden;
+  	/*  */transition: opacity 250ms ease;
+	/*  */pointer-events: none;
+	/*  */
 }
+
+/* DO NOT DELETE - CLASS FOR WORK OF THE FORM */
+
+			.modal-overlay.is-active {
+				opacity: 1;
+				visibility: visible;
+			}
 
 .modal-overlay.is-open {
 	opacity: 1;
@@ -749,8 +761,8 @@ footer ul.social-wrapper  li.team-social-list-item .social-link:hover {
 
 button.modal-close {
 	position: absolute;
-	top: 16px;
-	right: 16px;
+	top: 24px;
+	right: 24px;
 	background: none;
 	cursor: pointer;
 	border-radius: 100%;
@@ -818,6 +830,7 @@ button.modal-close:hover {
 
 .modal-form textarea {
 	width: 100%;
+	height: 120px;
 	padding: 8px;
 	border: 1px solid rgba(46, 47, 66, 0.4);
 	border-radius: 4px;
@@ -958,6 +971,10 @@ button.modal-send-button:focus {
 	margin-bottom: 16px;
 }
 
+.footer-form {
+	display: flex;
+}
+
 .footer-form .footer-input{
 	border: 1px solid #fff;
 	border-radius: 4px;
@@ -965,7 +982,7 @@ button.modal-send-button:focus {
 	height: 40px;
 	background-color: #2e2f42;
 	padding: 8px 16px;
-	margin-right: 19px;
+	margin-right: 24px;
 }
 
 .footer-form .footer-input::placeholder {
@@ -978,9 +995,12 @@ button.modal-send-button:focus {
 
 .footer-button {
 	border-radius: 4px;
-	padding: 8px 24px;
-	width: 165px;
-	height: 40px;
+    padding: 8px 25px;
+    width: 165px;
+    height: 40px;
+    text-align: left;
+	display: flex;
+    align-items: center;
 }
 
 .footer-button:focus-within,
@@ -1011,8 +1031,8 @@ button.modal-send-button:focus {
 
 .footer-button-icon {
 	fill: #fff;
-	stroke: #fff;
-	position: absolute;
-    top: 13px;
-    right: 15px;
+    stroke: #fff;
+    position: absolute;
+    top: 10px;
+    right: 19px;
 }
