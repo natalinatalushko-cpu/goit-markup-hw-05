@@ -720,8 +720,8 @@ footer ul.social-wrapper  li.team-social-list-item .social-link:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	opacity: 0;
-	pointer-events: none;
+	/* opacity: 0;
+	pointer-events: none; */
 }
 
 .modal-overlay.is-open {
@@ -730,7 +730,6 @@ footer ul.social-wrapper  li.team-social-list-item .social-link:hover {
 }
 
 .modal-overlay {
-	/* transition: opacity 0.3s ease; */
 	transition: opacity 250ms ease-in-out;
 }
 
@@ -744,7 +743,8 @@ footer ul.social-wrapper  li.team-social-list-item .social-link:hover {
 	max-width: 408px;
 	max-height: 584px;
 	overflow-y: auto;
-	position: relative;
+	position: fixed;
+	z-index: 999;
 }
 
 button.modal-close {
@@ -765,13 +765,17 @@ button.modal-close {
 	line-height: 0;	
 }
 
+button.modal-close:hover {
+	background-color: #4D5AE5;
+	fill: #F4F4FD;
+	border: 1px solid #4D5AE5;
+}
+
 .modal-form input {
 	width: 100%;
 	padding: 8px 8px 8px 35px;
 	border: 1px solid rgba(46, 47, 66, 0.4);
 	border-radius: 4px;
-	margin-top: 4px;
-	margin-bottom: 8px;
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-size: 12px;
@@ -781,11 +785,11 @@ button.modal-close {
 	letter-spacing: 0.02em;
 	color: #2E2F42;
 	outline: none;
+	height: 40px;
 }
 
-.modal-form input:focus-within,
 .modal-form input:focus,
-.modal-form input:hover {
+.modal-form textarea:focus {
 	border: 1px solid #4d5ae5;
 	outline: none;
 }
@@ -801,13 +805,15 @@ button.modal-close {
 	text-align: center;
 }
 
-.modal-form label {
+.modal-form .modal-label {
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-size: 12px;
-	line-height: 1.16667;
+	line-height: 1.16;
 	letter-spacing: 0.04em;
 	color: #8e8f99;
+	display: block;
+	margin-bottom: 4px;
 }
 
 .modal-form textarea {
@@ -823,8 +829,8 @@ button.modal-close {
 	letter-spacing: 0.04em;
 	color: rgba(46, 47, 66, 0.4);
 	resize: none;
-	margin-top: 4px;
 	outline: none; 
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form .checkbox-custom {
@@ -855,11 +861,17 @@ button.modal-close {
 
 /* form-icons */
 
-.input-wrapper .input-field {
-	position: relative;
+.input-wrapper {
+	margin-bottom: 8px;
 }
 
-.input-wrapper .input-field .input-icon {
+.input-wrapper .text-field {
+	position: relative;
+	width: 100%;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-wrapper .text-field .input-icon {
 	position: absolute;
 	top: 50%;
 	left: 19px;
@@ -867,22 +879,26 @@ button.modal-close {
 	pointer-events: none;
 }
 
-.input-field:focus-within .input-icon,
-.input-field:focus .input-icon,
-.input-field:hover .input-icon {
+.text-field:focus-within .input-icon,
+.text-field:focus .input-icon {
   fill: #4d5ae5;
 }
 
-.modal-form input.checkbox-input {
+.modal-form input#user-terms {
 	width: auto;
 }
 
+/* checkbox */
+
 .checkbox-wrapper {
 	margin-bottom: 24px;
-	position: relative
+	position: relative;
 }
 
-.checkbox-custom {
+.terms-label {
+	display: flex;
+	align-items: baseline;
+	column-gap: 8px;
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 1.16667;
@@ -890,10 +906,39 @@ button.modal-close {
 	color: #8e8f99;
 }
 
+.input-checkbox:focus + .terms-label .custom-checkbox {
+	border-color: #404BBF;
+	outline: none;
+}
+
+.input-checkbox:checked + .terms-label .custom-checkbox {
+	background-color: #404BBF;
+	border: 1px solid #404bbf;
+	fill: #F4F4FD;
+}
+
+.custom-checkbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 16px;
+	width: 16px;
+	border-radius: 2px;
+	border: 1px solid rgba(46, 47, 66, 0.4);
+	background-color: transparent;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	fill: none;
+}
+
 .akcent {
 	text-decoration: underline;
 	text-decoration-skip-ink: none;
 	color: #4d5ae5;
+}
+
+.akcent:hover {
+	color: #404BBF;
+	text-decoration: none;
 }
 
 button.modal-send-button:hover,
@@ -936,4 +981,38 @@ button.modal-send-button:focus {
 	padding: 8px 24px;
 	width: 165px;
 	height: 40px;
+}
+
+.footer-button:focus-within,
+.footer-button:focus,
+.footer-button:hover {
+	background-color: #31D0AA;
+	outline: none;
+}
+
+.footer-input:focus-within,
+.footer-input:focus,
+.footer-input:hover {
+	border: 1px solid #31D0AA;
+	outline: none;
+}
+
+.footer-input::placeholder:focus,
+.footer-input::placeholder:focus-within,
+.footer-input::placeholder:hover {
+	color: #31D0AA;
+
+}
+
+.footer-button-wrapper {
+	position: relative;
+	width: fit-content;
+}
+
+.footer-button-icon {
+	fill: #fff;
+	stroke: #fff;
+	position: absolute;
+    top: 13px;
+    right: 15px;
 }

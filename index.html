@@ -370,6 +370,9 @@
         </div>
       </section>
     </main>
+
+<!--#region-footer-->
+
     <footer class="footer-area background-navy-blue">
       <div class="footer-content container">
           <div class="section-content footer-content-section">
@@ -425,14 +428,23 @@
               </p>
               <form class="footer-form" action="#" method="post">
                 <input class="footer-input" type="email" name="email" id="email" placeholder="E-mail" required>
-                <button class="footer-button" type="submit">Subscribe</button>
+                <div class="footer-button-wrapper">
+                  <svg class="footer-button-icon" width="16" height="16">
+                    <use href="./images/icons.svg#iconsend"></use>
+                  </svg>
+                  <button class="footer-button" type="submit">Subscribe</button>
+                </div>
               </form>
           </div>
       </div>
     </footer>
 
+<!--#endregion-footer-->
+
+<!--#region-popup-->    
     <div class="modal-overlay">
         <div class="modal">
+          
           <form class="modal-form" action="#" method="post">
 
             <button class="modal-close" type="button">
@@ -447,7 +459,7 @@
 
               <div class="input-wrapper">
                 <label class="modal-label" for="name" autofocus>Name</label>
-                <div class="input-field">
+                <div class="text-field">
                    <input class="modal-input" type="text" id="name" name="name" required>
                    <svg class="input-icon" width="12" height="12">
                       <use href="./images/icons.svg#iconname-icon"></use> 
@@ -457,8 +469,8 @@
                
               <div class="input-wrapper">
                  <label class="modal-label" for="phone">Phone</label>
-                  <div class="input-field">
-                    <input class="modal-input" type="tel" id="phone" name="phone" required>
+                  <div class="text-field">
+                    <input class="modal-input" type="tel" id="phone" name="phone">
                     <svg class="input-icon" width="12" height="12">
                       <use href="./images/icons.svg#iconphone"></use>
                     </svg>
@@ -467,7 +479,7 @@
   
               <div class="input-wrapper">
                 <label class="modal-label" for="email">Email</label>
-                <div class="input-field">
+                <div class="text-field">
                   <input class="modal-input" type="email" id="email" name="email" required>
                   <svg class="input-icon" width="12" height="12">
                     <use href="./images/icons.svg#iconmail"></use>
@@ -481,11 +493,15 @@
               </div>
               
               <div class="checkbox-wrapper">
-                <label class="checkbox-label"> </label>
-                <input class="checkbox-input" type="checkbox" required>
-                <span class="checkbox-custom"> 
-                   I accept the terms and conditions of the <a href="#" class="akcent">Privacy Policy</a>
-                </span>
+                <input type="checkbox" id="user-terms" name="user-terms" value="true" required class="input-checkbox visually-hidden">
+                <label for="user-terms" class="terms-label"> 
+                  <span class="custom-checkbox">
+                    <svg class="check-icon" width="10" height="8">
+                      <use href="./images/icons.svg#iconcheck"></use>
+                    </svg>
+                  </span>
+                  I accept the terms and conditions of the <a href="#" class="akcent">Privacy Policy</a>
+                </label>
               </div>
   
               <button class="modal-send-button" type="submit">Send</button>
@@ -493,6 +509,8 @@
             
       </div>
     </div>
+<!--#endregion-popup-->
+
   </div>
 </body>
 
