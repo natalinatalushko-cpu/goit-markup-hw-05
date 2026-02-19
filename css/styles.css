@@ -731,16 +731,11 @@ footer ul.social-wrapper  li.team-social-list-item .social-link:hover {
 
 /* DO NOT DELETE - CLASS FOR WORK OF THE FORM */
 
-			.modal-overlay.is-active {
+			/* .modal-overlay.is-active {
 				opacity: 1;
 				visibility: visible;
 				pointer-events: auto;
-			}
-
-/* .modal-overlay.is-open {
-	opacity: 1;
-	pointer-events: auto;
-} */
+			} */
 
 /* .modal-overlay {
 	transition: opacity 250ms ease-in-out;
