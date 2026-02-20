@@ -771,7 +771,7 @@ button.modal-close {
 
 button.modal-close:hover {
 	background-color: #404bbf;
-	fill: #F4F4FD;
+	fill: #fff;
 	border: 1px solid #4D5AE5;
 }
 
@@ -977,6 +977,7 @@ button.modal-send-button:focus {
 	background-color: #2e2f42;
 	padding: 8px 16px;
 	margin-right: 24px;
+	color: #fff;
 	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
