@@ -890,7 +890,7 @@ button.modal-close:hover {
   fill: #4d5ae5;
 }
 
-.modal-form input#user-terms {
+.modal-form input.input-checkbox {
 	width: auto;
 }
 
